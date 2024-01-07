@@ -6,7 +6,7 @@ class NhanVien{
   String soDT;
   String diaChi;
   double luong;
-  NhanVien(this.hoTen, this.ngaySinh, this.soDT, this.diaChi, this.luong);
+  NhanVien({required this.hoTen, required this.ngaySinh, required this.soDT, required this.diaChi, required this.luong});
   @override
   String toString() {
     return '$maNV\t$hoTen\t$ngaySinh\t$soDT\t$diaChi\t$luong';

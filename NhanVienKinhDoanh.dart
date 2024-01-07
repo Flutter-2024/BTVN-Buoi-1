@@ -2,7 +2,8 @@ import 'NhanVien.dart';
 
 class NhanVienKinhDoanh extends NhanVien {
     int doanhSo;
-    NhanVienKinhDoanh(String hoTen, String ngaySinh, String soDT, String diaChi, double luong, this.doanhSo) : super(hoTen, ngaySinh, soDT, diaChi, luong){
+    NhanVienKinhDoanh({required String hoTen, required String ngaySinh, required String soDT, required String diaChi, required double luong, required this.doanhSo})
+        : super(hoTen: hoTen, ngaySinh: ngaySinh, soDT: soDT, diaChi: diaChi, luong: luong){
         maNV = maNV;
     }
     @override
