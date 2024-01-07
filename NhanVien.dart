@@ -6,9 +6,14 @@ class NhanVien{
   String soDT;
   String diaChi;
   double luong;
+  double realSalary = 0;
   NhanVien({required this.hoTen, required this.ngaySinh, required this.soDT, required this.diaChi, required this.luong});
   @override
   String toString() {
     return '$maNV\t$hoTen\t$ngaySinh\t$soDT\t$diaChi\t$luong';
+  }
+
+  void calSalary(){
+
   }
 }

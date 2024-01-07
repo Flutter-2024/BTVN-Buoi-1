@@ -5,7 +5,9 @@ class QuanLy{
     List<NhanVien> dsNV = [];
     QuanLy(this.dsNV);
     void inThongTin(){
+        print("maNV\thoTen\t\t\tngaySinh\tsoDT\t\tdiaChi\tluongCung\tdoanhSo/level\trealSalary");
         for(var nv in dsNV){
+            nv.calSalary();
             print(nv);
         }
     }
