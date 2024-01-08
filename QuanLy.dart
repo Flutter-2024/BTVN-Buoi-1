@@ -21,8 +21,11 @@ class QuanLy {
   void xemBangLuong() {
     print("Nhap thang:");
     String? thang = stdin.readLineSync();
-    var quanLyLuong = QuanLyThangLuong(dsNV: dsNV, thang: thang!);
-    quanLyLuong.inThongTinLuong();
+    if (thang != null){
+      var quanLyLuong = QuanLyThangLuong(dsNV: dsNV, thang: thang!);
+      quanLyLuong.inThongTinLuong();
+    }
+    else print("Error");
   }
 }
 

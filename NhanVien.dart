@@ -11,7 +11,7 @@ abstract class NhanVien {
       required this.ngaySinh,
       required this.soDT,
       required this.diaChi,
-      required this.luong });
+      required this.luong,});
   @override
   String toString() {
     return '$maNV\t$hoTen\t$ngaySinh\t$soDT\t$diaChi\t$luong';

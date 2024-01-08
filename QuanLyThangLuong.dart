@@ -4,7 +4,7 @@ import 'QuanLy.dart';
 class QuanLyThangLuong extends QuanLy {
   String thang;
 
-  QuanLyThangLuong({required dsNV, required this.thang}) : super(dsNV);
+  QuanLyThangLuong({required dsNV, required this.thang,}) : super(dsNV);
 
   void inThongTinLuong() {
     print("*** BANG LUONG THANG $thang ***");
