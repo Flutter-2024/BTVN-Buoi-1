@@ -24,11 +24,8 @@ class NhanVienKinhDoanh extends NhanVien {
 
   @override
   String toString() {
-    return super.toString() + '\t\t$doanhSo\t\t\t\t${calculateSalary()}';
+    return super.toString() + '\t\t$doanhSo\t\t\t\t$realSalary';
   }
 
-  @override
-  double calculateSalary() {
-    return luong + doanhSo * 0.1;
-  }
+  double get realSalary => luong + doanhSo * 0.1;
 }
