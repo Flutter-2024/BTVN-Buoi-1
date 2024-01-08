@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'Data.dart';
 import 'NhanVien.dart';
-import 'NhanVienKinhDoanh.dart';
+import 'QuanLyThangLuong.dart';
 
 class QuanLy {
   List<NhanVien> dsNV = [];
@@ -20,15 +20,7 @@ class QuanLy {
   void xemBangLuong() {
     print("Nhap thang:");
     String? thang = stdin.readLineSync();
-    print("*** BANG LUONG THANG $thang ***");
-    print("maNV\thoTen\t\t\trealSalary");
-    for (var nv in dsNV) {
-      if (nv is NhanVienKinhDoanh) {
-        if (nv.thang == thang) {
-          print(nv.maNV + "   " + nv.hoTen + "    " + nv.realSalary.toString());
-        }
-      } else
-        print(nv.maNV + "   " + nv.hoTen + "    " + nv.realSalary.toString());
-    }
+    var quanLyLuong = QuanLyThangLuong(dsNV: dsNV, thang: thang!);
+    quanLyLuong.inThongTinLuong();
   }
 }

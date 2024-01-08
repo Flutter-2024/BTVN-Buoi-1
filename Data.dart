@@ -40,7 +40,6 @@ class Data {
         soDT: '0123456789',
         diaChi: 'Ha Noi',
         luong: 1000,
-        thang: "1",
         doanhSo: 100));
     dsNV.add(NhanVienKinhDoanh(
         hoTen: 'Nguyen Van F',
@@ -48,7 +47,6 @@ class Data {
         soDT: '0123456789',
         diaChi: 'Ha Noi',
         luong: 1000,
-        thang: "1",
         doanhSo: 200));
     dsNV.add(NhanVienKinhDoanh(
         hoTen: 'Nguyen Van G',
@@ -56,7 +54,6 @@ class Data {
         soDT: '0123456789',
         diaChi: 'Ha Noi',
         luong: 1000,
-        thang: "1",
         doanhSo: 300));
 
     return dsNV;

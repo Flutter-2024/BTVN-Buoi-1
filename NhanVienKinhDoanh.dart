@@ -2,7 +2,6 @@ import 'NhanVien.dart';
 
 class NhanVienKinhDoanh extends NhanVien {
   int doanhSo;
-  String thang;
 
   NhanVienKinhDoanh(
       {required String hoTen,
@@ -10,7 +9,6 @@ class NhanVienKinhDoanh extends NhanVien {
       required String soDT,
       required String diaChi,
       required double luong,
-      required this.thang,
       required this.doanhSo})
       : super(
             hoTen: hoTen,
