@@ -41,6 +41,6 @@ class NhanVienLapTrinh extends NhanVien {
   }
   @override
   String toString() {
-    return super.toString() + '\t$level' + '\t$realSalary';
+    return super.toString() + '\t\t$level' + '\t\t\t\t$realSalary';
   }
 }
