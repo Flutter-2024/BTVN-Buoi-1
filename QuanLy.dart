@@ -15,7 +15,7 @@ class QuanLy {
       print('Nhap lua chon: ');
       var choice = stdin.readLineSync();
       while (int.tryParse(choice!) == null) {
-        print('Nhap sai, nhap lai');
+        print('Nhap sai, nhap lai: ');
         choice = stdin.readLineSync();
       }
 
@@ -35,7 +35,7 @@ class QuanLy {
         case 0:
           return;
         default:
-          print('Nhap sai, nhap lai');
+          print('Nhap sai, nhap lai: ');
       }
     }
   }
@@ -61,7 +61,7 @@ class QuanLy {
 
     var loaiNV = stdin.readLineSync();
     while (int.tryParse(loaiNV!) == null) {
-      print('Nhap sai, nhap lai');
+      print('Nhap sai, nhap lai: ');
       loaiNV = stdin.readLineSync();
     }
 
