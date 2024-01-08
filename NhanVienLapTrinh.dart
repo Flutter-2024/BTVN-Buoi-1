@@ -2,6 +2,7 @@ import 'NhanVien.dart';
 
 class NhanVienLapTrinh extends NhanVien {
   int level;
+
   NhanVienLapTrinh(
       {required String hoTen,
       required String ngaySinh,
@@ -14,9 +15,10 @@ class NhanVienLapTrinh extends NhanVien {
             ngaySinh: ngaySinh,
             soDT: soDT,
             diaChi: diaChi,
-            luong: luong) {
+            luong: luong ) {
     maNV = maNV;
   }
+
   @override
   set maNV(String _maNV) {
     super.maNV = 'LT' + _maNV.toString().padLeft(3, '0');
