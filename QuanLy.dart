@@ -8,7 +8,6 @@ class QuanLy {
     print(
         "maNV\thoTen\t\t\tngaySinh\tsoDT\t\tdiaChi\tluongCung\tdoanhSo/level\trealSalary");
     for (var nv in dsNV) {
-      nv.realSalary = nv.calculateSalary();
       print(nv);
     }
   }

@@ -6,7 +6,6 @@ abstract class NhanVien {
   String soDT;
   String diaChi;
   double luong;
-  double realSalary = 0;
   NhanVien(
       {required this.hoTen,
       required this.ngaySinh,
