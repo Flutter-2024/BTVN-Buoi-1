@@ -14,8 +14,12 @@ class QuanLy {
       menu();
       print('Nhap lua chon: ');
       var choice = stdin.readLineSync();
+      while (int.tryParse(choice!) == null) {
+        print('Nhap sai, nhap lai');
+        choice = stdin.readLineSync();
+      }
 
-      switch (choice != null ? int.parse(choice) : 0) {
+      switch (int.parse(choice)) {
         case 1:
           inThongTin();
           break;
@@ -110,7 +114,65 @@ class QuanLy {
     }
   }
 
-  void suaNhanVien() {}
+  void suaNhanVien() {
+    print('Nhap ma nhan vien can sua: ');
+    var maNV = stdin.readLineSync();
+    var index = dsNV.indexWhere((nv) => nv.maNV == maNV);
+    if (index == -1) {
+      print('Khong tim thay nhan vien');
+      return;
+    }
 
-  void xoaNhanVien() {}
+    print('Nhap ho ten: ');
+    var hoTen = stdin.readLineSync();
+    print('Nhap ngay sinh: ');
+    var ngaySinh = stdin.readLineSync();
+    print('Nhap so dien thoai: ');
+    var soDT = stdin.readLineSync();
+    print('Nhap dia chi: ');
+    var diaChi = stdin.readLineSync();
+
+    print('Nhap luong: ');
+    var luong = stdin.readLineSync();
+    while (double.tryParse(luong!) == null) {
+      print('Nhap sai, nhap lai');
+      luong = stdin.readLineSync();
+    }
+
+    if (dsNV[index] is NhanVienLapTrinh) {
+      print('Nhap level: ');
+      var level = stdin.readLineSync();
+      while (int.tryParse(level!) == null) {
+        print('Nhap sai, nhap lai');
+        level = stdin.readLineSync();
+      }
+
+      dsNV[index].hoTen = hoTen!;
+      dsNV[index].ngaySinh = ngaySinh!;
+      dsNV[index].soDT = soDT!;
+      dsNV[index].diaChi = diaChi!;
+      dsNV[index].luong = double.parse(luong);
+      (dsNV[index] as NhanVienLapTrinh).level = int.parse(level);
+    } else {
+      print('Nhap doanh so: ');
+      var doanhSo = stdin.readLineSync();
+      while (int.tryParse(doanhSo!) == null) {
+        print('Nhap sai, nhap lai');
+        doanhSo = stdin.readLineSync();
+      }
+
+      dsNV[index].hoTen = hoTen!;
+      dsNV[index].ngaySinh = ngaySinh!;
+      dsNV[index].soDT = soDT!;
+      dsNV[index].diaChi = diaChi!;
+      dsNV[index].luong = double.parse(luong);
+      (dsNV[index] as NhanVienKinhDoanh).doanhSo = int.parse(doanhSo);
+    }
+  }
+
+  void xoaNhanVien() {
+    print('Nhap ma nhan vien can xoa: ');
+    var maNV = stdin.readLineSync();
+    dsNV.removeWhere((nv) => nv.maNV == maNV);
+  }
 }
