@@ -1,18 +1,12 @@
-# *SUMARY*
-Add, edit and remove employee information.
+# BTVN-Buoi-1
+Viết chương trình bằng ngôn ngữ dart gồm các chức năng sau.
+Quản lý nhân viên: gồm các nhân viên như nhân viên kinh doanh, nhân viên lập trình.
+- Nhân viên kinh doanh gồm các thông tin mã nhân viên, tên, ngày sinh, số điện thoại, địa chỉ, lương cứng.
+- Nhân viên lập trình gồm các thông tin mã nhân viên, ngày sinh, số điện thoại, địa chỉ, level, lương.
 
-# *CHANGE*
-Change in some classes:
-- Class QuanLy:
-  - [x] Add new method: ```run()```, `xoaNhanVien()`, `suaNhanVien()`, `themNhanVien()`, `menu()`.
-- Class main:
-  - [x] Replace method `inThongTin()` with method `run()`.
+Một số chức năng:
 
-# *CHECKLIST*
-- [x] Add employee information.
-- [x] Edit employee information.
-- [x] Remove employee information.
-- [x] Reformat code with dart format.
-
-# *RESULT*
-![image](https://github.com/Flutter-2024/BTVN-Buoi-1/assets/101249227/f2f9956d-01a5-4638-a406-0c854e0a7ecb)
+- Thực hiên thêm sửa xoá xem thông tin nhân viên.
+- Tính lương nhân viên: gồm tính lương cho các nhân viên theo công thức
+  - Nhân viên kinh doanh = doanh thu * 10% + lương cứng.
+  - Nhân viên lập trình bằng = lương + phụ cấp level (Tuỳ chỉnh phụ cấp theo level)
