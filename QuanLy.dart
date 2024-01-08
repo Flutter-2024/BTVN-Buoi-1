@@ -4,6 +4,7 @@ import 'Data.dart';
 import 'NhanVien.dart';
 import 'NhanVienKinhDoanh.dart';
 
+
 class QuanLy {
   List<NhanVien> dsNV = [];
 
@@ -32,3 +33,4 @@ class QuanLy {
     }
   }
 }
+
