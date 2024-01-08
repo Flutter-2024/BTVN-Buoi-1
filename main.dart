@@ -1,7 +1,7 @@
 import 'Data.dart';
 import 'QuanLy.dart';
 
-void main(){
+void main() {
     var quanLy = QuanLy(Data().getData());
     quanLy.inThongTin();
 }
