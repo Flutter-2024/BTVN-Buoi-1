@@ -17,5 +17,4 @@ abstract class NhanVien {
     return '$maNV\t$hoTen\t$ngaySinh\t$soDT\t$diaChi\t$luong';
   }
 
-  double calculateSalary();
 }
