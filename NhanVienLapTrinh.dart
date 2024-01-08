@@ -27,5 +27,6 @@ class NhanVienLapTrinh extends NhanVien {
     return super.toString() + '\t$level\t';
   }
 
+  @override
   double get realSalary => 0;
 }
