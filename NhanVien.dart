@@ -16,5 +16,5 @@ abstract class NhanVien {
   String toString() {
     return '$maNV\t$hoTen\t$ngaySinh\t$soDT\t$diaChi\t$luong';
   }
-
+  double get realSalary;
 }
