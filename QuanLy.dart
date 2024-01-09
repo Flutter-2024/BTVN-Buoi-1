@@ -12,12 +12,12 @@ class QuanLy {
   void run() {
     while (true) {
       menu();
-      print('Nhap lua chon: ');
-      var choice = stdin.readLineSync();
-      while (int.tryParse(choice!) == null) {
-        print('Nhap sai, nhap lai: ');
-        choice = stdin.readLineSync();
-      }
+
+      String choice = '';
+      do {
+        print('Nhap lua chon: ');
+        choice = stdin.readLineSync() ?? '';
+      } while (choice.isEmpty || int.tryParse(choice) == null);
 
       switch (int.parse(choice)) {
         case 1:
@@ -56,123 +56,118 @@ class QuanLy {
     }
   }
 
+  String readInput(String message) {
+    String? input;
+    do {
+      print(message);
+      input = stdin.readLineSync() ?? '';
+    } while (input.isEmpty);
+    return input;
+  }
+
   void themNhanVien() {
     print('Nhap loai nhan vien:\n' + '1: Lap trinh\n' + '2: Kinh doanh');
-
-    var loaiNV = stdin.readLineSync();
-    while (int.tryParse(loaiNV!) == null) {
+    String loaiNV = stdin.readLineSync() ?? '';
+    while (loaiNV.isEmpty ||
+        int.tryParse(loaiNV) == null ||
+        (int.parse(loaiNV) != 1 && int.parse(loaiNV) != 2)) {
       print('Nhap sai, nhap lai: ');
-      loaiNV = stdin.readLineSync();
+      loaiNV = stdin.readLineSync() ?? '';
     }
 
-    print('Nhap ho ten: ');
-    var hoTen = stdin.readLineSync();
-    print('Nhap ngay sinh: ');
-    var ngaySinh = stdin.readLineSync();
-    print('Nhap so dien thoai: ');
-    var soDT = stdin.readLineSync();
-    print('Nhap dia chi: ');
-    var diaChi = stdin.readLineSync();
+    String hoTen = readInput("Nhap ho ten: ");
+    String ngaySinh = readInput("Nhap ngay sinh: ");
+    String soDT = readInput("Nhap so dien thoai: ");
+    String diaChi = readInput("Nhap dia chi: ");
 
-    print('Nhap luong: ');
-    var luong = stdin.readLineSync();
-    while (double.tryParse(luong!) == null) {
-      print('Nhap sai, nhap lai');
-      luong = stdin.readLineSync();
-    }
+    String luong;
+    do {
+      print('Nhap luong: ');
+      luong = stdin.readLineSync() ?? '';
+    } while (luong.isEmpty || double.tryParse(luong) == null);
 
     if (int.parse(loaiNV) == 1) {
-      print('Nhap level: ');
-      var level = stdin.readLineSync();
-      while (int.tryParse(level!) == null) {
-        print('Nhap sai, nhap lai');
-        level = stdin.readLineSync();
-      }
+      String level;
+      do {
+        print('Nhap level: ');
+        level = stdin.readLineSync() ?? '';
+      } while (level.isEmpty || int.tryParse(level) == null);
 
       dsNV.add(NhanVienLapTrinh(
-          hoTen: hoTen!,
-          ngaySinh: ngaySinh!,
-          soDT: soDT!,
-          diaChi: diaChi!,
+          hoTen: hoTen,
+          ngaySinh: ngaySinh,
+          soDT: soDT,
+          diaChi: diaChi,
           luong: double.parse(luong),
           level: int.parse(level)));
     } else {
-      print('Nhap doanh so: ');
-      var doanhSo = stdin.readLineSync();
-      while (int.tryParse(doanhSo!) == null) {
-        print('Nhap sai, nhap lai');
-        doanhSo = stdin.readLineSync();
-      }
+      String doanhSo;
+      do {
+        print('Nhap doanh so: ');
+        doanhSo = stdin.readLineSync() ?? '';
+      } while (doanhSo.isEmpty || int.tryParse(doanhSo) == null);
 
       dsNV.add(NhanVienKinhDoanh(
-          hoTen: hoTen!,
-          ngaySinh: ngaySinh!,
-          soDT: soDT!,
-          diaChi: diaChi!,
+          hoTen: hoTen,
+          ngaySinh: ngaySinh,
+          soDT: soDT,
+          diaChi: diaChi,
           luong: double.parse(luong),
           doanhSo: int.parse(doanhSo)));
     }
   }
 
   void suaNhanVien() {
-    print('Nhap ma nhan vien can sua: ');
-    var maNV = stdin.readLineSync();
+    String maNV = readInput("Nhap ma nhan vien can sua: ");
+
     var index = dsNV.indexWhere((nv) => nv.maNV == maNV);
     if (index == -1) {
       print('Khong tim thay nhan vien');
       return;
     }
 
-    print('Nhap ho ten: ');
-    var hoTen = stdin.readLineSync();
-    print('Nhap ngay sinh: ');
-    var ngaySinh = stdin.readLineSync();
-    print('Nhap so dien thoai: ');
-    var soDT = stdin.readLineSync();
-    print('Nhap dia chi: ');
-    var diaChi = stdin.readLineSync();
+    String hoTen = readInput("Nhap ho ten: ");
+    String ngaySinh = readInput("Nhap ngay sinh: ");
+    String soDT = readInput("Nhap so dien thoai: ");
+    String diaChi = readInput("Nhap dia chi: ");
 
-    print('Nhap luong: ');
-    var luong = stdin.readLineSync();
-    while (double.tryParse(luong!) == null) {
-      print('Nhap sai, nhap lai');
-      luong = stdin.readLineSync();
-    }
+    String luong;
+    do {
+      print('Nhap luong: ');
+      luong = stdin.readLineSync() ?? '';
+    } while (luong.isEmpty || double.tryParse(luong) == null);
 
     if (dsNV[index] is NhanVienLapTrinh) {
-      print('Nhap level: ');
-      var level = stdin.readLineSync();
-      while (int.tryParse(level!) == null) {
-        print('Nhap sai, nhap lai');
-        level = stdin.readLineSync();
-      }
+      String level;
+      do {
+        print('Nhap level: ');
+        level = stdin.readLineSync() ?? '';
+      } while (level.isEmpty || int.tryParse(level) == null);
 
-      dsNV[index].hoTen = hoTen!;
-      dsNV[index].ngaySinh = ngaySinh!;
-      dsNV[index].soDT = soDT!;
-      dsNV[index].diaChi = diaChi!;
+      dsNV[index].hoTen = hoTen;
+      dsNV[index].ngaySinh = ngaySinh;
+      dsNV[index].soDT = soDT;
+      dsNV[index].diaChi = diaChi;
       dsNV[index].luong = double.parse(luong);
       (dsNV[index] as NhanVienLapTrinh).level = int.parse(level);
     } else {
-      print('Nhap doanh so: ');
-      var doanhSo = stdin.readLineSync();
-      while (int.tryParse(doanhSo!) == null) {
-        print('Nhap sai, nhap lai');
-        doanhSo = stdin.readLineSync();
-      }
+      String doanhSo;
+      do {
+        print('Nhap doanh so: ');
+        doanhSo = stdin.readLineSync() ?? '';
+      } while (doanhSo.isEmpty || int.tryParse(doanhSo) == null);
 
-      dsNV[index].hoTen = hoTen!;
-      dsNV[index].ngaySinh = ngaySinh!;
-      dsNV[index].soDT = soDT!;
-      dsNV[index].diaChi = diaChi!;
+      dsNV[index].hoTen = hoTen;
+      dsNV[index].ngaySinh = ngaySinh;
+      dsNV[index].soDT = soDT;
+      dsNV[index].diaChi = diaChi;
       dsNV[index].luong = double.parse(luong);
       (dsNV[index] as NhanVienKinhDoanh).doanhSo = int.parse(doanhSo);
     }
   }
 
   void xoaNhanVien() {
-    print('Nhap ma nhan vien can xoa: ');
-    var maNV = stdin.readLineSync();
+    String maNV = readInput("Nhap ma nhan vien can xoa: ");
     dsNV.removeWhere((nv) => nv.maNV == maNV);
   }
 }
