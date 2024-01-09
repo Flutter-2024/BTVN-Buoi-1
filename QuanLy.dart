@@ -1,8 +1,9 @@
 import 'dart:io';
 
+import 'Data.dart';
 import 'NhanVien.dart';
-import 'NhanVienKinhDoanh.dart';
-import 'NhanVienLapTrinh.dart';
+import 'QuanLyThangLuong.dart';
+
 
 class QuanLy {
   List<NhanVien> dsNV = [];
@@ -47,6 +48,7 @@ class QuanLy {
     print('4. Xoa nhan vien');
     print('0. Thoat');
   }
+
 
   void inThongTin() {
     print(
@@ -170,4 +172,19 @@ class QuanLy {
     String maNV = readInput("Nhap ma nhan vien can xoa: ");
     dsNV.removeWhere((nv) => nv.maNV == maNV);
   }
+  
+  void xemBangLuong() {
+    print("Nhap thang:");
+    String? thang = stdin.readLineSync();
+    if (thang != null){
+      var quanLyLuong = QuanLyThangLuong(dsNV: dsNV, thang: thang!);
+      quanLyLuong.inThongTinLuong();
+    }
+    else print("Error");
+  }
 }
+
+  
+
+  
+

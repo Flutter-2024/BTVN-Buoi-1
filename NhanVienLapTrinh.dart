@@ -5,17 +5,17 @@ class NhanVienLapTrinh extends NhanVien {
 
   NhanVienLapTrinh(
       {required String hoTen,
-        required String ngaySinh,
-        required String soDT,
-        required String diaChi,
-        required double luong,
-        required this.level,})
+      required String ngaySinh,
+      required String soDT,
+      required String diaChi,
+      required double luong,
+      required this.level,})
       : super(
-    hoTen: hoTen,
-    ngaySinh: ngaySinh,
-    soDT: soDT,
-    diaChi: diaChi,
-    luong: luong,) {
+            hoTen: hoTen,
+            ngaySinh: ngaySinh,
+            soDT: soDT,
+            diaChi: diaChi,
+            luong: luong,) {
     maNV = maNV;
   }
 
